@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+		<title>Document</title>
+
+		<script type = "text/javascript" 
+			src = "https://static.fusioncharts.com/code/latest/fusioncharts.js">
+		</script>
+
+		<style>
+			* {
+				margin: 0;
+				font-family: Josefin Sans;
+			}
+
+			#indian-map {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: -1;
+			}
+
+			.navbar{
+				width: 100%;
+				margin: auto;
+				padding: 30px 0;
+				position: fixed;
+				top: 0;
+				display: flex;
+				align-items: center;
+				justify-content: right;
+				z-index: 1;
+			}
+
+			.navbar ul li{
+				list-style: none;
+				display: inline-block;
+				margin: 0 20px;
+				position: relative;
+			}
+
+			.navbar ul li a{
+				text-decoration: none;
+				color: #fff;
+				text-transform: uppercase;
+			}
+
+			.navbar ul li::after{
+				content: '';
+				height: 3px;
+				width: 0%;
+				background: #009688;
+				position: absolute;
+				left: 0%;
+				bottom: -10px;
+				transition: 0.5s;
+			}
+
+			.navbar ul li:hover::after{
+				width: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="indian-map">Loading map...</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="/popular_view.html">Most Popular</a></li>
+				<li><a href="/map_view.html">Map View</a></li>
+			</ul>
+		</div>
+	</body>
+
+	<script>
+		FusionCharts.ready(function() {
+					var IndiaMap=new FusionCharts({
+						type: "maps/india",
+						renderAt: "indian-map",
+						height: "100%",
+						width: "100%",
+						dataFormat: "json",
+						dataSource: {
+							"chart": {
+
+								// Canvas alterations
+								"canvasPadding": "100",
+								"showCanvasBorder": "0",
+
+								// Set default color for states
+								"fillColor": "#c6a67a",
+								"fillAlpha": "20",
+
+								// Set default hover color
+								"hoverColor": "#5e8b82",
+								"hoverAlpha": "50",
+
+								// Sets background color of map view
+								"bgImage": "images/color-bg.jpg",
+								"bgImageDisplayMode": "fill",
+								"bgImageAlpha": "80",
+								"bgColor": "#000000", // TODO: Configure Gradient Background
+								"bgAlpha": "100",
+
+								// Map Borders
+								"showBorder": "1",
+								"borderColor": "#000000",
+
+								// Hide unwanted stuff
+								"showLegend": "0",
+								"showLabels": "0",
+
+								// Configure tooltip
+								"toolTipPadding": "5",
+								"toolTipColor": "#FFFFFF",
+								"toolTipBgColor": "#000000",
+								"toolTipBgAlpha": "70",
+								"toolTipBorderThickness": "1",
+								"tooltipBorderRadius": "5",
+								"toolTipBorderColor": "#FFFFFF",
+								"toolTipBorderAlpha": "80",
+
+								// Manage Font
+								"baseFont": "Josefin Sans",
+								"baseFontSize": "15"
+							},
+
+							"data2": [
+
+								// Hide some UTs
+								{	"id": "001", // Andaman and Nicobar Islands
+									"useHoverColor": "0",
+									"showToolTip": "0",
+									"alpha": "0"
+								},
+								{
+									"id": "008", // Dadra & Nagar Haweli
+									"useHoverColor": "0",
+									"showToolTip": "0",
+									"alpha": "0"
+								},
+								{
+									"id": "009", // Daman and Dui
+									"useHoverColor": "0",
+									"showToolTip": "0",
+									"alpha": "0"
+								},
+								{
+									"id": "019",  // Lakshdweep
+									"useHoverColor": "0",
+									"showToolTip": "0",
+									"alpha": "0"
+								},
+								{
+									"id": "027",  // Puducherry
+									"useHoverColor": "0",
+									"showToolTip": "0",
+									"alpha": "0"
+								},
+
+								// Modify states' behaviour
+								{
+									"id": "002",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "003",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "004",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "005",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "006",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "007",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "010",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "011",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "012",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "013",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "014",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "015",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "016",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "017",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "018",
+									"link": "n-https://www.google.com",
+									"color": "#000000",
+								},
+								{
+									"id": "020",
+									"link": "n-https://www.google.com",
+									"color": "#ffffff",
+								},
+								{
+									"id": "021",
+									"link": "https://www.google.com",
+								},
+							]
+						}
+					}).render();	
+				});
+	</script>
+</html>
